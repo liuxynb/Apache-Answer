@@ -336,6 +336,7 @@ func (qs *QuestionService) AddQuestion(ctx context.Context, req *schema.Question
 	question.UserID = req.UserID
 	question.Title = req.Title
 	question.OriginalText = req.Content
+	question.OriginLink = req.OriginLink
 	question.ParsedText = req.HTML
 	question.AcceptedAnswerID = "0"
 	question.LastAnswerID = "0"
@@ -885,6 +886,7 @@ func (qs *QuestionService) UpdateQuestion(ctx context.Context, req *schema.Quest
 	question := &entity.Question{}
 	question.Title = req.Title
 	question.OriginalText = req.Content
+	question.OriginLink = req.OriginLink
 	question.ParsedText = req.HTML
 	question.ID = uid.DeShortID(req.ID)
 	question.UpdatedAt = now

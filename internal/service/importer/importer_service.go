@@ -97,6 +97,7 @@ func (ip *ImporterService) ImportQuestion(ctx context.Context, questionInfo plug
 	req.UserID = userInfo.ID
 	req.Title = questionInfo.Title
 	req.Content = questionInfo.Content
+	req.OriginLink = questionInfo.OriginLink
 	req.HTML = "<p>" + questionInfo.Content + "</p>"
 	req.Tags = make([]*schema.TagItem, len(questionInfo.Tags))
 	for i, tag := range questionInfo.Tags {

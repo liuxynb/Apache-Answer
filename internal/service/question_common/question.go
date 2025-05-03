@@ -648,6 +648,7 @@ func (qs *QuestionCommon) ShowFormat(ctx context.Context, data *entity.Question)
 	info.Title = data.Title
 	info.UrlTitle = htmltext.UrlTitle(data.Title)
 	info.Content = data.OriginalText
+	info.OriginLink = data.OriginLink
 	info.HTML = data.ParsedText
 	info.ViewCount = data.ViewCount
 	info.UniqueViewCount = data.UniqueViewCount

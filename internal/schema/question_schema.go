@@ -80,6 +80,8 @@ type QuestionAdd struct {
 	Title string `validate:"required,notblank,gte=6,lte=150" json:"title"`
 	// content
 	Content string `validate:"required,notblank,gte=6,lte=65535" json:"content"`
+	// origin link
+	OriginLink string `json:"origin_link"`
 	// html
 	HTML string `json:"-"`
 	// tags
@@ -196,6 +198,8 @@ type QuestionUpdate struct {
 	Title string `validate:"required,notblank,gte=6,lte=150" json:"title"`
 	// content
 	Content string `validate:"required,notblank,gte=6,lte=65535" json:"content"`
+	// origin link
+	OriginLink string `validate:"lte=255" json:"origin_link"`
 	// html
 	HTML       string   `json:"-"`
 	InviteUser []string `validate:"omitempty"  json:"invite_user"`
@@ -253,6 +257,7 @@ type QuestionInfoResp struct {
 	Title                string         `json:"title"`
 	UrlTitle             string         `json:"url_title"`
 	Content              string         `json:"content"`
+	OriginLink           string         `json:"origin_link"`
 	HTML                 string         `json:"html"`
 	Description          string         `json:"description"`
 	Tags                 []*TagResp     `json:"tags"`

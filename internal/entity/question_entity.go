@@ -58,6 +58,7 @@ type Question struct {
 	LastEditUserID   string    `xorm:"not null default 0 BIGINT(20) last_edit_user_id"`
 	Title            string    `xorm:"not null default '' VARCHAR(150) title"`
 	OriginalText     string    `xorm:"not null MEDIUMTEXT original_text"`
+	OriginLink       string    `xorm:"not null default '' VARCHAR(255) origin_link"` // 添加原文链接字段
 	ParsedText       string    `xorm:"not null MEDIUMTEXT parsed_text"`
 	Pin              int       `xorm:"not null default 1 INT(11) pin"`
 	Show             int       `xorm:"not null default 1 INT(11) show"`

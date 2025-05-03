@@ -24,10 +24,11 @@ import (
 )
 
 type QuestionImporterInfo struct {
-	Title     string   `json:"title"`
-	Content   string   `json:"content"`
-	Tags      []string `json:"tags"`
-	UserEmail string   `json:"user_email"`
+	Title      string   `json:"title"`
+	Content    string   `json:"content"`
+	OriginLink string   `json:"origin_link"`
+	Tags       []string `json:"tags"`
+	UserEmail  string   `json:"user_email"`
 }
 
 type Importer interface {
